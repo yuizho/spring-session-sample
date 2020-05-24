@@ -16,5 +16,8 @@ Now the server is running, visit http://localhost:8080/session-attr with your bo
 ## Endponts
 - The session sample implemented by @SessionAttributes
   - http://localhost:8080/session-attr
+  - the login user infoformation
+    - id: userA
+    - password: password
 - The PRG pattern sample by frash scope (this scope uses temporary session)
   - http://localhost:8080/flash-scope
