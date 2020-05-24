@@ -1,5 +1,13 @@
 # spring-session-sandbox
-This project works on docker-commpose.
+This project works on docker-compose.
+
+This branch's codes has the issue related to session, because the session is stored in each App server.
+like this.
+
+![](server_config.svg)
+
+The issue is resolved on `manage-session-with-redis` branch.
+When you want to check a solution of the issue, please check `manage-session-with-redis` branch.
 
 ## Getting Started
 ```
