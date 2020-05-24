@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<header></header>
+<header th:replace="session_attr/_fragments :: header"></header>
 <main>
 <h1>Login</h1>
 <form th:action="@{/session-attr/login}" method="post" th:object="${loginForm}">

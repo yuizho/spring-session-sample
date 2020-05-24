@@ -6,15 +6,12 @@
     <script>
         (() => {
             document.addEventListener('DOMContentLoaded', () => {
-                const header = document.querySelector('header');
-                header.innerHTML = `<strong>Host:</strong> ${window.location.href}`
             });
         })();
     </script>
 </head>
 <body>
-<header>
-</header>
+<header th:fragment="header" th:text="'App Server is ' + ${host}"></header>
 <main>
 </main>
 </body>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.support.SessionStatus
+import javax.servlet.http.HttpServletRequest
 
 @Controller
 @RequestMapping("/session-attr")
@@ -11,7 +12,8 @@ import org.springframework.web.bind.support.SessionStatus
 @SessionAttributes(names = ["userSession"])
 class SessionAttributesSampleController {
     @GetMapping
-    fun index(model: Model): String {
+    fun index(model: Model, request: HttpServletRequest): String {
+        model.addAttribute("host", request.getHeaders("X-App-Server-Host")?.nextElement())
         return if (model.getAttribute("userSession") != null) {
             println("logged in")
             "session_attr/loggedin.html"
