@@ -1,4 +1,5 @@
-# spring-session-sample
+# spring-session-sandbox
+This project works on docker-commpose.
 
 ## Getting Started
 ```
@@ -6,3 +7,9 @@ $ ./mvnw clean install && docker-compose up --build
 ```
 
 Now the server is running, visit http://localhost:8080/session-attr with your borwser.
+
+## Endponts
+- The session sample implemented by @SessionAttributes
+  - http://localhost:8080/session-attr
+- The PRG pattern sample by frash scope (this scope uses temporary session)
+  - http://localhost:8080/flash-scope
