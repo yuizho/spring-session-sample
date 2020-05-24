@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input:invalid {
+            box-shadow: 0 0 5px 1px red;
+        }
+
+        input:focus:invalid {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="flash_scope/_fragments :: header"></header>
+<main>
+<h1>A Form Sample</h1>
+<form th:action="@{/flash-scope/post}" method="post" th:object="${accountForm}">
+    <!-- *{name} で ${accountForm.name} と同意になる -->
+    <!-- https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf_ja.html#%E9%81%B8%E6%8A%9E%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E5%BC%8F%E3%82%A2%E3%82%B9%E3%82%BF%E3%83%AA%E3%82%B9%E3%82%AF%E6%A7%8B%E6%96%87 -->
+    <label for="name">名前(必須): </label>
+    <input id="name" type="text" th:field="*{name}" required maxlength="20">
+    <br>
+    <button type="submit">post the data</button>
+</form>
+</main>
+</body>
+</html>
