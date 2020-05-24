@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.support.SessionStatus
+import java.io.Serializable
 import javax.servlet.http.HttpServletRequest
 
 @Controller
@@ -53,4 +54,8 @@ class SessionAttributesSampleController {
 
 data class LoginForm(val id: String? = null, val password: String? = null)
 
-data class LoginUser(val loggedin: Boolean, val id: String? = null)
+/**
+ * the object that is stored in redis.
+ * that's why this class needs to implement Serializable.
+ */
+data class LoginUser(val loggedin: Boolean, val id: String? = null): Serializable

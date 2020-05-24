@@ -3,6 +3,8 @@ package com.github.yuizho.springsessionsample
 import org.springframework.boot.web.servlet.ServletContextInitializer
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer
+import org.springframework.data.redis.serializer.RedisSerializer
 import java.util.*
 import javax.servlet.ServletContext
 import javax.servlet.SessionTrackingMode
@@ -21,4 +23,18 @@ class SpringSessionSampleConfig {
 
         }
     }
+
+
+    /**
+     * this time the session object is serialized with Serializable.
+     * therefore this method doesn't need.
+     * but, when you want to serialize the session object with json or some thing,
+     * you have to implement the serializer method like below.
+     */
+    /*
+    @Bean
+    fun redisSerializer(): RedisSerializer<Any> {
+        return GenericJackson2JsonRedisSerializer()
+    }
+    */
 }
