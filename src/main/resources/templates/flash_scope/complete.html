@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="flash_scope/_fragments :: header"></header>
+<main>
+<h1>The Form Items were registered</h1>
+<p th:text="'the name passed by flash scope(tmp session): ' + ${account.name}"></p>
+</main>
+</body>
+</html>
