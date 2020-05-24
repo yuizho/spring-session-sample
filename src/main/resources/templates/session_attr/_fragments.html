@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        (() => {
+            document.addEventListener('DOMContentLoaded', () => {
+                const header = document.querySelector('header');
+                header.innerHTML = `<strong>Host:</strong> ${window.location.href}`
+            });
+        })();
+    </script>
+</head>
+<body>
+<header>
+</header>
+<main>
+</main>
+</body>
+</html>

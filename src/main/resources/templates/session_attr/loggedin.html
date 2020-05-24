@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="session_attr/_fragments :: head">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<header></header>
+<main>
 <h1>Logged in</h1>
 <h2 th:text="'hi ' + ${userSession.id} + ' !'"></h2>
 <form th:action="@{/session-attr/logout}" method="post">
     <button type="submit">logout</button>
 </form>
+</main>
 </body>
 </html>

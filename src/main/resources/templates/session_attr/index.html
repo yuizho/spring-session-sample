@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="session_attr/_fragments :: head">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<header></header>
+<main>
 <h1>Login</h1>
 <form th:action="@{/session-attr/login}" method="post" th:object="${loginForm}">
     <label for="id">id: </label>
@@ -13,5 +15,6 @@
     <input id="password" type="password" th:field="*{password}" required maxlength="20">
     <button type="submit">login</button>
 </form>
+</main>
 </body>
 </html>
