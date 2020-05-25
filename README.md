@@ -22,5 +22,7 @@ Now the server is running, visit http://localhost:8080/session-attr with your bo
   - the login user infoformation
     - id: userA
     - password: password
+- The session sample implemented by Session Scoped Bean
+  - http://localhost:8080/session-bean
 - The PRG pattern sample by frash scope (this scope uses temporary session)
   - http://localhost:8080/flash-scope
