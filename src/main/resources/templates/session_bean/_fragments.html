@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        (() => {
+            document.addEventListener('DOMContentLoaded', () => {
+            });
+        })();
+    </script>
+</head>
+<body>
+<header th:fragment="header" th:text="'App Server is ' + ${host}"></header>
+<main>
+</main>
+</body>
+</html>
