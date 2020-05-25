@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.context.annotation.SessionScope
+import java.io.Serializable
 import javax.servlet.http.HttpServletRequest
 
 @Controller
@@ -41,7 +42,7 @@ class LoginController(private val cart: Cart) {
 @SessionScope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 data class Cart(var itemName: String? = null,
                 var itemCount: Int? = 0
-) {
+) : Serializable {
     fun reset(): Unit {
         itemName = null
         itemCount = 0
