@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="session_bean/_fragments :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="session_bean/_fragments :: header"></header>
+<main>
+<h1>Cart</h1>
+<form th:action="@{/session-bean/add}" method="post" th:object="${cart}">
+    <label for="item-name">item name: </label>
+    <input id="item-name" type="text" th:field="*{itemName}" required maxlength="20">
+    <label id="label_item-count" for="item-count" th:text="'item count: ' + *{itemCount}">item count: 0</label>
+    <input id="item-count" type="range" th:field="*{itemCount}">
+    <br>
+    <button type="submit">add</button>
+</form>
+<form th:action="@{/session-bean/reset}" method="post">
+    <button type="submit">reset</button>
+</form>
+</main>
+<script>
+    (() => {
+       const itemCountLabel = document.querySelector('#label_item-count');
+       const itemCountSlider = document.querySelector('#item-count');
+       itemCountSlider.addEventListener('change', (e) => {
+           console.log(e.target.value)
+           itemCountLabel.textContent = `item count: ${e.target.value}`;
+       });
+    })();
+</script>
+</body>
+</html>
